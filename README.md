@@ -24,8 +24,10 @@ export ROS_DOMAIN_ID=69
 ##  2. Xây dựng bản đồ
 # map1
 ros2 launch agv_ros gmapping_launch.py
-#map2
+# map2
 ros2 launch agv_ros gmapping_launch2.py
+# Lệnh điều khiển
+ros2 run agv_ros mecanum_keyboard_teleop.py
 ## 3. Thực hiện navigation
 # ap1
 ros2 launch agv_ros nav1.launch.py
