@@ -29,7 +29,7 @@ ros2 launch agv_ros gmapping_launch2.py
 # Lệnh điều khiển
 ros2 run agv_ros mecanum_keyboard_teleop.py
 ## 3. Thực hiện navigation
-# ap1
+# map1
 ros2 launch agv_ros nav1.launch.py
 # map2
 ros2 launch agv_ros nav2_house.launch.py
