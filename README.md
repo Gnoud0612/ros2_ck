@@ -47,14 +47,14 @@ Terminal 1: Khởi động mô phỏng và Gmapping
 cd ~/ros2_ws
 source install/setup.bash
 export ROS_DOMAIN_ID=69
-ros2 run agv_ros mecanum_keyboard_teleop.py
+ros2 launch agv_ros gmapping_launch.py
 ```
 Terminal 2: Bật điều khiển bằng bàn phím (Teleop)
 ```bash
 cd ~/ros2_ws
 source install/setup.bash
 export ROS_DOMAIN_ID=69
-python3 src/agv_ros/scripts/mecanum_keyboard_teleop.py
+ros2 run agv_ros mecanum_keyboard_teleop.py
 ```
 Sử dụng các phím (u, i, o, j, k, l, m, , , .) trên Terminal 2 để lái xe đa hướng quanh mô hình 3D cho đến khi bản đồ trên RViz được hoàn thiện.
 Terminal 3: Lưu bản đồ (Map Saver)
