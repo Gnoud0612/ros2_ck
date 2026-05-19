@@ -47,7 +47,7 @@ Terminal 1: Khởi động mô phỏng và Gmapping
 cd ~/ros2_ws
 source install/setup.bash
 export ROS_DOMAIN_ID=69
-ros2 launch agv_ros gmapping_launch.py
+ros2 run agv_ros mecanum_keyboard_teleop.py
 ```
 Terminal 2: Bật điều khiển bằng bàn phím (Teleop)
 ```bash
