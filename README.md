@@ -106,3 +106,13 @@ Test trên sa bàn ngôi nhà chữ T (Map 2):
 ```bash
 ros2 launch agv_ros nav2_house.launch.py
 ```
+# 5. Hướng dẫn thao tác trên RViz để xe tự chạy:
+Hệ thống Nav2 yêu cầu xác nhận vị trí ban đầu trước khi tính toán đường đi.
+## 5.1. Khởi tạo vị trí (Localization):
+Bấm vào nút 2D Pose Estimate (Mũi tên xanh lá) trên thanh công cụ RViz.
+Click và giữ chuột trái tại vị trí xe đang đứng trên bản đồ, kéo chuột theo hướng đầu xe đang nhìn.
+Thành công khi: Tia Lidar (chấm đỏ) khớp hoàn toàn với đường viền vách tường đen.
+## 5.2. Ra lệnh di chuyển (Path Planning):
+Bấm vào nút Nav2 Goal (hoặc 2D Goal Pose).
+Click chuột vào điểm đích đến mong muốn trên phần nền trắng an toàn, giữ và kéo để định hướng đỗ xe.
+Kết quả: Robot tự động vạch quỹ đạo xanh lá cây và né tránh các khu vực vật cản (vùng costmap tím/xanh lơ) để tiến tới đích.
