@@ -21,7 +21,7 @@ sudo apt install -y \
   ros-humble-xacro
 ```
 Lưu ý: Thuật toán Gmapping không hỗ trợ cài đặt trực tiếp qua apt trên ROS 2 Humble. Do đó, mã nguồn của openslam_gmapping và slam_gmapping đã được tích hợp sẵn trong thư mục src của dự án này để biên dịch trực tiếp.
-2. Biên dịch Workspace (Build)
+## 2. Biên dịch Workspace (Build)
 Mở Terminal và thực hiện các lệnh sau để tải và biên dịch dự án:
 ```bash
 # 1. Di chuyển vào thư mục workspace
@@ -37,8 +37,10 @@ source install/setup.bash
 chmod +x ~/ros2_ws/src/agv_ros/scripts/mecanum_keyboard_teleop.py
 ```
 QUAN TRỌNG: Dự án này sử dụng tần số giao tiếp riêng biệt để tránh nhiễu tín hiệu. Mỗi khi mở một Terminal mới, bạn bắt buộc phải chạy lệnh cấu hình Domain ID:
+```bash
 export ROS_DOMAIN_ID=69
-3. Chạy SLAM (Xây dựng bản đồ với Gmapping)
+```
+## 3. Chạy SLAM (Xây dựng bản đồ với Gmapping)
 Để xe di chuyển và quét bản đồ môi trường, bạn cần mở 2 Terminal song song:
 Terminal 1: Khởi động mô phỏng và Gmapping
 ```bash
@@ -64,7 +66,7 @@ export ROS_DOMAIN_ID=69
 # Cú pháp: ros2 run nav2_map_server map_saver_cli -f <đường_dẫn_lưu_map/tên_map>
 ros2 run nav2_map_server map_saver_cli -f ~/ros2_ws/map_hoan_thien
 ```
-4. Chạy Navigation 2 (Điều hướng tự động)
+## 4. Chạy Navigation 2 (Điều hướng tự động)
 Dự án đã được cấu hình file Launch "All-in-one", khởi động đồng loạt Gazebo, RViz, nạp bản đồ tĩnh và kích hoạt hệ thống tự lái chỉ bằng 1 lệnh duy nhất.
 Mở 1 Terminal mới:
 ```bash
@@ -73,6 +75,10 @@ source install/setup.bash
 export ROS_DOMAIN_ID=69
 ```
 Test trên sa bàn lục giác (Map 1): 
+```bash
 ros2 launch agv_ros nav1.launch.py
+```
 Test trên sa bàn ngôi nhà chữ T (Map 2):
+```bash
 ros2 launch agv_ros nav2_house.launch.py
+```
