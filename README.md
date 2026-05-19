@@ -33,7 +33,8 @@ ros2_ws/src/
 │   │   └── nav2_omni_params.yaml         # Thông số Tuning cho Navigation 2 (Xe đa hướng)
 │   │
 │   ├── launch/                           # Kịch bản khởi chạy hệ thống (All-in-one)
-│   │   ├── gmapping_launch.py            # Chạy Gazebo + SLAM Gmapping
+│   │   ├── gmapping_launch1.py           # Chạy Gazebo + SLAM Gmapping map1
+│   │   ├── gmapping_launch2.py           # Chạy Gazebo + SLAM Gmapping map2
 │   │   ├── nav1.launch.py                # Chạy mô phỏng tự lái trên sa bàn Lục giác
 │   │   └── nav2_house.launch.py          # Chạy mô phỏng tự lái trên sa bàn Ngôi nhà
 │   │
